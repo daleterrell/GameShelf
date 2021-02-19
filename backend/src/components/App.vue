@@ -27,19 +27,19 @@ import Games from "./Games.vue";
 import { useGameShelfApi } from "../hooks/gameshelf-api";
 
 export default {
-    name: "app"
-    components: { Header, Games, Search },
-    setup() {
-        const state = useGameShelfApi;
+  name: "app",
+  components: { Header, Games, Search },
+  setup() {
+    const state = useGameShelfApi;
 
-        return {
-            state,
-            handleSearch(searchTerm) {
-                state.loading = true;
-                state.search = searchTerm;
-            }
-        }
-    }
+    return {
+      state,
+      handleSearch(searchTerm) {
+        state.loading = true;
+        state.search = searchTerm;
+      },
+    };
+  },
 };
 </script>
 
