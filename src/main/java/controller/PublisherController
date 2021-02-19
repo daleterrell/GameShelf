@@ -1,0 +1,26 @@
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping(path = "/api/publishers")
+public class MovieController {
+
+    @Autowired
+    private PublisherRepository publisherRepository;
+
+    @GetMapping(path = "")
+    public Iterable<Publisher> getAllPublishers() {
+        return publisherRepository.findAll();
+    }
+
+    @GetMapping(path = "/{id}")
+    public Title getPublisher(@PathVariable(value = "id") Integer id) {
+        Optional<Publisher> publisher = publisherRepository.findById(id);
+        return publisher.get();
+    }
+
+    @PostMapping(path = "/")
+    public Title createPublisher(@RequestBody Publisher publisher) {
+        return publisherRepository.save(publisher);
+    }
+
+}

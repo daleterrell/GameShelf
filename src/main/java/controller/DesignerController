@@ -1,0 +1,26 @@
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping(path = "/api/movies")
+public class DesignerController {
+
+    @Autowired
+    private DesignerRepository designerRepository;
+
+    @GetMapping(path = "")
+    public Iterable<Designer> getAllDesigners() {
+        return designerRepository.findAll();
+    }
+
+    @GetMapping(path = "/{id}")
+    public Title getDesigner(@PathVariable(value = "id") Integer id) {
+        Optional<Designer> designer = designerRepository.findById(id);
+        return designer.get();
+    }
+
+    @PostMapping(path = "/")
+    public Designer createDesigner(@RequestBody Designer designer) {
+        return designerRepository.save(designer);
+    }
+
+}
