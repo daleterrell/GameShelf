@@ -9,6 +9,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.aim.gameshelf.designer.Designer;
+import org.aim.gameshelf.publisher.Publisher;
+import org.aim.movie.title.Title;
+
 @Entity
 @Table(name = "designers")
 public class Designer {

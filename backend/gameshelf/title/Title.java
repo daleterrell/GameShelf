@@ -16,10 +16,9 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
-import org.aim.movie.actor.Actor;
-import org.aim.movie.director.Director;
-import org.aim.movie.genre.Genre;
-import org.aim.movie.rating.Rating;
+import org.aim.gameshelf.designer.Designer;
+import org.aim.gameshelf.publisher.Publisher;
+import org.aim.movie.title.Title;
 
 @Entity
 @Table(name = "games")
