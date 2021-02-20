@@ -5,6 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
+<<<<<<< HEAD
 		<version>2.4.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
@@ -17,6 +18,21 @@
 	<properties>
 		<java.version>11</java.version>
 	</properties>
+=======
+		<version>2.3.3.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.example</groupId>
+	<artifactId>GameShelf</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>GameShelf</name>
+	<description>Demo project for Spring Boot</description>
+
+	<properties>
+		<java.version>11</java.version>
+	</properties>
+
+>>>>>>> 5d48a1aecd196bb6fa1c0ab5432a78bd22b1a68f
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -24,10 +40,13 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
+<<<<<<< HEAD
 			<artifactId>spring-boot-starter-jdbc</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
+=======
+>>>>>>> 5d48a1aecd196bb6fa1c0ab5432a78bd22b1a68f
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
@@ -38,9 +57,26 @@
 			<optional>true</optional>
 		</dependency>
 		<dependency>
+<<<<<<< HEAD
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+=======
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.junit.vintage</groupId>
+					<artifactId>junit-vintage-engine</artifactId>
+				</exclusion>
+			</exclusions>
+>>>>>>> 5d48a1aecd196bb6fa1c0ab5432a78bd22b1a68f
 		</dependency>
 	</dependencies>
 
@@ -50,6 +86,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+<<<<<<< HEAD
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
@@ -58,6 +95,8 @@
 				<testFailureIgnore>true</testFailureIgnore>
 				</configuration>
 			</plugin>
+=======
+>>>>>>> 5d48a1aecd196bb6fa1c0ab5432a78bd22b1a68f
 		</plugins>
 	</build>
 
