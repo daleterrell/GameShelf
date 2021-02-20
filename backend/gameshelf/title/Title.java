@@ -21,24 +21,24 @@ import org.aim.gameshelf.publisher.Publisher;
 import org.aim.movie.title.Title;
 
 @Entity
-@Table(name = "games")
-public class Games {
+@Table(name = "titles")
+public class Title {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "game_id")
+    @Column(name = "title_id")
     private Integer id;
 
-    @Column(name = "game_name")
-    private String gameTitle;
+    @Column(name = "title")
+    private String title;
 
     @ManyToOne
-    @JoinColumn(name = "designer_id", nullable = false)
-    private Designer designer;
+    @JoinColumn(name = "title_id", nullable = false)
+    private Title title;
 
     @ManyToMany
-    @JoinTable(name = "designer", joinColumns = @JoinColumn(name = "game_id"), inverseJoinColumns = @JoinColumn(name = "designer_id"))
-    private List<Designer> designers;
+    @JoinTable(name = "title", joinColumns = @JoinColumn(name = "game_id"), inverseJoinColumns = @JoinColumn(name = "designer_id"))
+    private List<Title> title;
 
     public Integer getId() {
         return id;
