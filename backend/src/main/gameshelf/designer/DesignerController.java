@@ -1,5 +1,8 @@
 package org.aim.gameshelf.designer;
 
+import org.aim.gameshelf.title;
+import org.aim.gameshelf.publisher;
+
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
@@ -30,6 +33,8 @@ public class DesignerController {
 
     @GetMapping(path = "/{id}")
     public Designer getDesigner(@PathVariable(value = "id") Integer id, HttpServletResponse response) {
+        return designerRepository.findById(Id);
+
         Optional<Designer> designer = designerRepository.findById(id);
 
         try {
@@ -57,7 +62,7 @@ public class DesignerController {
 
         designer.setFirstName(designerDetails.getFirstName());
         designer.setLastName(designerDetails.getLastName());
-        designer.setDateOfBirth(designerDetails.getDateOfBirth());
+        
 
         designerRepository.save(designer);
         return "Updated";

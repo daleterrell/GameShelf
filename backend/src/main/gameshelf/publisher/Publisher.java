@@ -1,6 +1,6 @@
-package org.aim.gameshelf.title;
+package org.aim.gameshelf.publisher;
 
-import org.aim.gameshelf.publisher;
+import org.aim.gameshelf.title;
 import org.aim.gameshelf.designer;
 
 import java.util.Date;
@@ -19,27 +19,28 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
-import org.aim.movie.gameshelf
+import org.aim.gameshelf.Designer;
+import org.aim.gameshelf.Title;
 
 @Entity
-@Table(name = "games")
-public class Games {
+@Table(name = "publisher")
+public class Publisher {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "game_id")
+    @Column(name = "publisher_id")
     private Integer id;
 
-    @Column(name = "game_name")
-    private String gameTitle;
+    @Column(name = "publisher_name")
+    private String publisher;
 
     @ManyToOne
-    @JoinColumn(name = "title", nullable = false)
-    private Title title;
+    @JoinColumn(name = "publisher_id", nullable = false)
+    private Designer publisher;
 
     @ManyToMany
-    @JoinTable(name = "title", joinColumns = @JoinColumn(name = "game_id"), inverseJoinColumns = @JoinColumn(name = "title_id"))
-    private List<Designer> designers;
+    @JoinTable(name = "publisher", joinColumns = @JoinColumn(name = "game_id"), inverseJoinColumns = @JoinColumn(name = "publisher_id"))
+    private List<Publisher> publishers;
 
     public Integer getId() {
         return id;
@@ -49,12 +50,12 @@ public class Games {
         this.id = id;
     }
 
-    public String getGameTitle() {
-        return gameTitle;
+    public String getPublisher() {
+        return getPublisher;
     }
 
-    public void setTitle(Title title) {
-        this.title;
+    public void setPublisher(Publisher publisher) {
+        this.publisher = publisher;
     }
 
 }

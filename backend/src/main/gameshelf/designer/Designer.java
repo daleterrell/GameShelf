@@ -1,5 +1,7 @@
 package org.aim.gameshelf.designer;
 
+import org.aim.gameshelf.Title;
+import org.aim.gameshelf.Publisher;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -10,7 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "designers")
+@Table(name = "designer")
 public class Designer {
 
     @Id

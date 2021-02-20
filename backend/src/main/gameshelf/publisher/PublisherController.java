@@ -24,20 +24,20 @@ import org.springframework.web.bind.annotation.RestController;
 public class DesignerController {
 
     @Autowired
-    private DesignerRepository publisherRepository;
+    private DesignerRepository designerRepository;
 
     @GetMapping(path = "")
-    public Iterable<Designer> getAllPublishers() {
-        return publisherRepository.findAll();
+    public Iterable<Designer> getAllDesigners() {
+        return designerRepository.findAll();
     }
 
     @GetMapping(path = "/{id}")
-    public Publisher getPublisher(@PathVariable(value = "id") Integer id, HttpServletResponse response) {
-        Optional<Designer> publisher = publisherRepository.findById(id);
+    public Designer getDesigner(@PathVariable(value = "id") Integer id, HttpServletResponse response) {
+        Optional<Designer> designer = designerRepository.findById(id);
 
         try {
 
-            return publisher.get();
+            return designer.get();
 
         } catch (NoSuchElementException nsee) {
             nsee.printStackTrace();
@@ -48,25 +48,27 @@ public class DesignerController {
     }
 
     @PostMapping(path = "/")
-    public String createPublisher(@RequestBody Publisher publisher) {
-        publisherRepository.save(publisher);
+    public String createDesigner(@RequestBody Designer designer) {
+        designerRepository.save(designerr);
         return "Saved";
     }
 
     @PutMapping(path = "/{id}")
-    public String updatePublisher(@PathVariable(value = "id") Integer id, @RequestBody Publisher publisherDetails) {
+    public String updateDesigner(@PathVariable(value = "id") Integer id, @RequestBody Designer designerDetails) {
         Optional<Designer> optionalDesigner = designerRepository.findById(id);
-        Publisher publisher = optionalPublisher.get();
+        Designer designer = optionalDesigner.get();
 
-        designer.setName(publisherDetails.getName());
+        designer.setFirstName(designerDetails.getFirstName());
+        designer.setLastName(designerDetails.getLastName());
+
         designerRepository.save(designer);
         return "Updated";
 
     }
 
     @DeleteMapping(path = "/{id}")
-    public String deletePublisher(@PathVariable(value = "id") Integer id) {
-        publisherRepository.deleteById(id);
+    public String deleteDesigner(@PathVariable(value = "id") Integer id) {
+        designerRepository.deleteById(id);
         return "Deleted";
     }
 

@@ -14,11 +14,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(path = "/api/movies")
-public class MovieController {
+@RequestMapping(path = "/api/gameshelf")
+public class GameController {
 
     @Autowired
-    private GameRepository gameRepository;
+    private MovieRepository gameRepository;
 
     @GetMapping(path = "")
     public Iterable<Movie> getAllGames() {
