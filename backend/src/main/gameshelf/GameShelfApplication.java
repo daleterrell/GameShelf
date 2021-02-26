@@ -1,3 +1,5 @@
+package com.aim.java.gameshelf.game;
+
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
