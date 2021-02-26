@@ -36,7 +36,7 @@ public class Publisher {
 
     @ManyToOne
     @JoinColumn(name = "publisher_id", nullable = false)
-    private Designer publisher;
+    private Designer designer;
 
     @ManyToMany
     @JoinTable(name = "publisher", joinColumns = @JoinColumn(name = "game_id"), inverseJoinColumns = @JoinColumn(name = "publisher_id"))
