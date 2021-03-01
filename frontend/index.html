@@ -23,8 +23,26 @@
             axios.get("http://localhost:8080/api/title")
                 .then
             function (response) {
-                console.log(getAllGames
-                        const tbody = document.querySelector("boardgames tbody")
+                console.log(getAllGames)
+                const tbody = document.querySelector("boardgames tbody")
+            }
+        }
+
+        function getAllDesigners() {
+            axios.get("http://localhost:8080/api/title")
+                .then
+            function (response) {
+                console.log(getAllDesigners)
+                const tbody = document.querySelector("designers tbody")
+            }
+        }
+
+        function getAllGames() {
+            axios.get("http://localhost:8080/api/title")
+                .then
+            function (response) {
+                console.log(getAllPublishers)
+                const tbody = document.querySelector("publishers tbody")
             }
         }
     </script>
